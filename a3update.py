@@ -12,16 +12,16 @@ from datetime import datetime
 from urllib import request
 
 #region Configuration
-A3_SERVER_FOLDER = "srv2"
+#A3_SERVER_FOLDER = "srv2"
 A3_SERVER_ID = "233780"
-A3_SERVER_DIR = "/home/gsm/games/gsm/arma/{}".format(A3_SERVER_FOLDER)
+A3_SERVER_DIR = "/home/arma3server"
 A3_WORKSHOP_ID = "107410"
 
-STEAM_CMD = "{}/steamcmd/steamcmd.sh".format(A3_SERVER_DIR)
+STEAM_CMD = "{}/.steam/steamcmd/steamcmd.sh".format(A3_SERVER_DIR)
 STEAM_USER = input("Steam Username: ")
-STEAM_PASS = getpass.getpass(prompt="Steam Password ")
+STEAM_PASS = getpass.getpass(prompt="Steam Password: ")
 
-A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID)
+A3_WORKSHOP_DIR = "{}/steamapps/workshop/content/{}".format(A3_SERVER_DIR, A3_WORKSHOP_ID) # maybe {}/serverfiles/....... is needed see what happens
 A3_MODS_DIR = "{}/serverfiles/mods".format(A3_SERVER_DIR)
 
 print("")
@@ -193,5 +193,5 @@ lowercase_workshop_dir()
 log("Creating symlinks...")
 create_mod_symlinks()
 
-log("Start A3 server")
-start_server()
+log("Start A3 server (commented out)")
+#start_server()
